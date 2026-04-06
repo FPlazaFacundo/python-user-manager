@@ -30,27 +30,27 @@ def menu_usuarios(lista_usuarios):
 
 #Esta funcion busca a los usuarios
 def buscar_usuarios(lista_usuarios):
-        busqueda = input("Escriba el nombre a buscar: ")
-        encontrado = False
-        for usuario in lista_usuarios:
-            if usuario["nombre"] == busqueda:
-                mostrar_usuarios(usuario)
-                encontrado = True
-                try:
-                    cambiar = int(input("Desea cambiar el email?\n1-Si\n2-no\n"))
-                except: cambiar=0
-                if cambiar == 1:
-                    usuario["email"] = input("Ingrese el email: ")
-                try:
-                    borrar = int(input("Desea borrar el usuario?\n1-Si\n2-No\n"))
-                except:
-                    borrar = 0
-                if borrar == 1:
-                    lista_usuarios.remove(usuario)
-                    print("Usuario borrado")
-                    break
-        if not encontrado:
-            print("No se encontro")
+    busqueda = input("Escriba el nombre a buscar: ")
+    encontrado = False
+    for usuario in lista_usuarios:
+        if usuario["nombre"] == busqueda:
+            mostrar_usuarios(usuario)
+            encontrado = True
+            try:
+                cambiar = int(input("Desea cambiar el email?\n1-Si\n2-no\n"))
+            except: cambiar=0
+            if cambiar == 1:
+                usuario["email"] = input("Ingrese el email: ")
+            try:
+                borrar = int(input("Desea borrar el usuario?\n1-Si\n2-No\n"))
+            except:
+                borrar = 0
+            if borrar == 1:
+                lista_usuarios.remove(usuario)
+                print("Usuario borrado")
+                break
+    if not encontrado:
+        print("No se encontro")
 
 #Esta funcion muestra los datos de usuario
 def mostrar_usuarios(usuario):
